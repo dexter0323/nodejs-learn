@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-learn",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "npm run build && node --env-file=.env dist/main.js",
+    "dev": "NODE_OPTIONS='--import=tsx' node --env-file=.env --watch-path=./src src/main.ts",
+    "build": "tsc",
+    "lint": "eslint",
+    "docker:up": "docker compose up -d --build",
+    "docker:down": "docker compose down -v",
+    "docker:create": "docker compose down -v && docker compose up -d --build --force-recreate"
+  },
+  "keywords": [
+    "nodejs",
+    "concurrency"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.11.6"
+  }
+}
